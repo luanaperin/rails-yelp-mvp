@@ -1,0 +1,21 @@
+<h1>All Restaurants <i class="fa fa-cutlery" aria-hidden="true" style="color: blue;"></i>
+</h1>
+
+
+ <%= link_to 'New Restaurants', new_restaurant_path, class: "btn btn-primary" %>
+ <%= link_to 'Edit Restaurants', new_restaurant_path, class: "btn btn-primary" %>
+
+<% @restaurants.each do |restaurant| %>
+  <h2><i class="fa fa-user-o" aria-hidden="true"></i>
+<%= link_to restaurant.name, restaurant_path(restaurant.id) %></h2>
+  <p><strong><i class="fa fa-map-marker" aria-hidden="true"></i>
+Address:</strong> <%= restaurant.address %></p>
+  <p><strong><i class="fa fa-phone" aria-hidden="true"></i>
+Phone Number:</strong> <%= restaurant.phone_number %></p>
+  <p><strong>Category:</strong> <%= restaurant.category %></p>
+  <br>
+<% end %>
+
+
+
+
